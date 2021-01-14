@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   }
   //--------------------------------------------------------------------------------------
 
-  private onKeySearch(event: any) {
+  onKeySearch(event: any) {
     clearTimeout(this.timeout);
     var $this = this;
     this.timeout = setTimeout(function () {
