@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +20,13 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "jw-angular-pagination": "^1.2.0",
+    "jw-paginate": "^1.0.4",
+    "ngx-bootstrap": "^6.2.0",
+    "ngx-input-search": "^3.0.8",
+    "ngx-spinner": "^10.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

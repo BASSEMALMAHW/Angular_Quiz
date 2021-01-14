@@ -1,0 +1,45 @@
+<header (searchcriteria)="searchThis($event)" [searchWord]="searchWord"> </header>
+<div class="container">
+
+ <div class="d-flex flex-row-reverse bd-highlight mb-2">
+    <div class="p-2 bd-highlight">
+      <select (change)="onTableSizeChange($event)" class="custom-select">
+        <option *ngFor="let size of tableSizes">
+          {{ size }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Firat Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Avatar</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users">
+      <tr *ngFor="let user of users" scope="row" (click)="fetchUserById(user.id)" [class.active] = "user.id === selectedUserId" >
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td> <img src="{{user.avatar}}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center">
+    <pagination
+      responsive="true"
+      previousLabel="Prev"
+      nextLabel="Next"
+      [totalItems] = "tableSize"
+      (pageChanged)="onTableDataChange($event)">
+    </pagination>
+  </div>
+</div>
+
+<ngx-spinner name="Dspinner" bdColor = "rgba(70,65,65,0.8)" size = "medium" color = "#3fa7ec" type = "ball-circus" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
